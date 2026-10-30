@@ -17,14 +17,12 @@ export const Reveal = ({ children, delay = 0, y = 32, className = "", once = tru
 export const MaskedLines = ({ lines, className = "", delay = 0, stagger = 0.1, as = "h2" }) => {
   const Tag = motion[as];
   return (
-    <Tag className={className}>
+    <Tag className={className} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-10% 0px" }}>
       {lines.map((line, i) => (
         <span key={i} className="block overflow-hidden pb-[0.08em] -mb-[0.08em]">
           <motion.span
             className="block"
-            initial={{ y: "110%" }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: true, margin: "-10% 0px" }}
+            variants={{ hidden: { y: "110%" }, visible: { y: 0 } }}
             transition={{ duration: 1, ease: EASE, delay: delay + i * stagger }}
           >
             {line}

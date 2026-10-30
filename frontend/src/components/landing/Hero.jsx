@@ -36,11 +36,11 @@ export const Hero = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 2, ease: EASE }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--ink)] via-[rgba(18,16,16,0.72)] to-[rgba(18,16,16,0.15)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[rgba(18,16,16,0.6)] to-[rgba(18,16,16,0.25)] lg:bg-gradient-to-r lg:from-[var(--ink)] lg:via-[rgba(18,16,16,0.72)] lg:to-[rgba(18,16,16,0.15)]" />
         <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-[var(--ink)] to-transparent" />
       </motion.div>
 
-      <motion.div style={{ y: textY, opacity: fade }} className="relative z-10 mx-auto max-w-[1440px] px-6 lg:px-12 pt-40 lg:pt-52 pb-40">
+      <motion.div style={{ y: textY, opacity: fade }} className="relative z-10 mx-auto max-w-[1440px] px-6 lg:px-12 pt-36 lg:pt-52 pb-16 lg:pb-40">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -90,11 +90,11 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6, duration: 1 }}
-        className="absolute bottom-0 inset-x-0 z-10 border-t border-white/10"
+        className="relative lg:absolute lg:bottom-0 lg:inset-x-0 z-10 border-t border-white/10 bg-[var(--ink)] lg:bg-transparent"
       >
-        <div className="mx-auto max-w-[1440px] px-6 lg:px-12 grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-12 grid grid-cols-2 lg:grid-cols-4 lg:divide-x divide-white/10">
           {STATS.map((s, i) => (
-            <div key={s.label} data-testid={`hero-stat-${i}`} className="py-6 lg:py-8 px-4 first:pl-0">
+            <div key={s.label} data-testid={`hero-stat-${i}`} className="py-5 lg:py-8 lg:px-4 lg:first:pl-0">
               <p className="font-display text-3xl lg:text-4xl font-light">{s.value}</p>
               <p className="eyebrow text-[#a69d8f] mt-1">{s.label}</p>
             </div>

@@ -20,9 +20,10 @@ export const Nav = () => {
     <>
       <div
         data-testid="announcement-bar"
-        className="fixed top-0 inset-x-0 z-50 h-8 bg-[var(--crimson)] text-[var(--ivory)] text-[11px] tracking-[0.22em] uppercase flex items-center justify-center"
+        className="fixed top-0 inset-x-0 z-50 h-8 bg-[var(--crimson)] text-[var(--ivory)] text-[10px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.22em] uppercase flex items-center justify-center px-4 whitespace-nowrap overflow-hidden"
       >
-        Wedding season 2026 · Book a free stylist consultation · Hyderabad & California
+        <span className="sm:hidden">Wedding season 2026 · Free stylist consultation</span>
+        <span className="hidden sm:inline">Wedding season 2026 · Book a free stylist consultation · Hyderabad & California</span>
       </div>
       <motion.header
         data-testid="main-nav"
