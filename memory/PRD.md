@@ -17,6 +17,10 @@ Key constraint (verbatim): "i just want screen shots of new ux THATS IT it is sh
 - MaskedLines reveal never fired (IntersectionObserver clipped by overflow-hidden) → parent-driven variants.
 - Mobile: announcement bar wrap, hero stats overlapping CTAs → static stats on mobile, shorter bar text.
 
+## Developer handoff pack (30 Oct 2026)
+- Script `/app/scripts/capture_handoff.py` (Playwright) → `/app/frontend/public/handoff/`: full-page + per-section PNGs at desktop 1440@2x and mobile 390@3x, contact success state, mobile menu, `README-dev-spec.md` (tokens, type, layout, section-by-section behaviour, motion), zipped as `groom2b-ux-handoff.zip` (served at `/handoff/groom2b-ux-handoff.zip`).
+- Run against `http://localhost:3000` (preview URL can 502 intermittently).
+
 ## Backlog (not requested; ideas only)
 - P2: Export screenshots as a shareable PDF/Figma-like board.
 - P2: Light/dark alternate concept for A/B comparison.
