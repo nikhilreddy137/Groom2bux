@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --ivory: #f3eee4;
+    --bone: #e9e2d3;
+    --ink: #121010;
+    --ink-2: #1b1816;
+    --crimson: #9c1b2c;
+    --gold: #b8893a;
+    --gold-light: #e2c483;
+    --stone: #6b645c;
+
+    --background: 40 33% 92%;
+    --foreground: 12 9% 7%;
+    --card: 40 33% 95%;
+    --card-foreground: 12 9% 7%;
+    --popover: 40 33% 95%;
+    --popover-foreground: 12 9% 7%;
+    --primary: 12 9% 7%;
+    --primary-foreground: 40 33% 92%;
+    --secondary: 38 26% 87%;
+    --secondary-foreground: 12 9% 7%;
+    --muted: 38 26% 87%;
+    --muted-foreground: 30 7% 39%;
+    --accent: 352 70% 36%;
+    --accent-foreground: 40 33% 92%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 12% 80%;
+    --input: 30 12% 80%;
+    --ring: 38 52% 47%;
+    --radius: 0rem;
+}
+
+* {
+    @apply border-border;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: "Manrope", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: default;
+}
+
+::selection {
+    background: var(--crimson);
+    color: var(--ivory);
+}
+
+.font-display {
+    font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.eyebrow {
+    @apply text-[11px] uppercase tracking-[0.32em] font-medium;
+}
+
+.grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    z-index: 1;
+}
+
+.hairline {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.gold-text {
+    background: linear-gradient(100deg, #8d6523 0%, #e2c483 40%, #b8893a 60%, #f1dfae 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 38s linear infinite;
+}
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.btn-ink {
+    @apply inline-flex items-center gap-3 px-7 py-4 text-[12px] uppercase tracking-[0.22em] font-semibold;
+    background: var(--ink);
+    color: var(--ivory);
+    position: relative;
+    overflow: hidden;
+    transition:
+        color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-ink::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--crimson);
+    transform: translateY(101%);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 0;
+}
+.btn-ink:hover::after {
+    transform: translateY(0);
+}
+.btn-ink > * {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-outline {
+    @apply inline-flex items-center gap-3 px-7 py-4 text-[12px] uppercase tracking-[0.22em] font-semibold border;
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.link-underline {
+    position: relative;
+}
+.link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.img-zoom img {
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.img-zoom:hover img {
+    transform: scale(1.06);
+}
+
+.field {
+    @apply w-full bg-transparent border-0 border-b py-4 text-base outline-none;
+    border-color: rgba(18, 16, 16, 0.25);
+    transition: border-color 0.3s ease;
+}
+.field:focus {
+    border-color: var(--ink);
+}
+.field::placeholder {
+    color: rgba(18, 16, 16, 0.4);
+}

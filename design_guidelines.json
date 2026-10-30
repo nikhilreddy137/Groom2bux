@@ -1,0 +1,246 @@
+{
+  "brand": {
+    "name": "GROOM2B",
+    "tagline": "We Celebrate You",
+    "aesthetic": "High-Fashion Indian Couture & Regal Heritage Studio",
+    "locations": [
+      {
+        "city": "Hyderabad, India",
+        "address": "Jubilee Hills, Road No. 36, Hyderabad, Telangana",
+        "phone": "+91 91000 00000",
+        "type": "Flagship Studio"
+      },
+      {
+        "city": "Milpitas, California, USA",
+        "address": "Milpitas Town Center, Milpitas, CA 95035",
+        "phone": "+1 408 000 0000",
+        "type": "International Boutique"
+      }
+    ],
+    "stats": {
+      "outfitsCreated": "1,00,000+",
+      "groomsServed": "20,000+",
+      "yearsExcellence": "6+ Years",
+      "googleRating": "4.8★ (374 Reviews)",
+      "justdialRating": "4.8★ (369 Reviews)"
+    }
+  },
+  "typography": {
+    "headings": {
+      "fontFamily": "'Cormorant Garamond', 'Cinzel Decorative', 'Playfair Display', serif",
+      "googleFontUrl": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cinzel:wght@400;600;700;800&display=swap",
+      "heroHeading": "text-4xl sm:text-5xl lg:text-6xl tracking-tight font-serif uppercase leading-[1.1]",
+      "sectionHeading": "text-2xl sm:text-3xl lg:text-4xl font-serif tracking-normal text-amber-100",
+      "subHeading": "text-xl sm:text-2xl font-serif italic text-amber-200/90"
+    },
+    "body": {
+      "fontFamily": "'Plus Jakarta Sans', sans-serif",
+      "sizes": {
+        "large": "text-lg sm:text-xl font-light leading-relaxed",
+        "normal": "text-base font-normal leading-relaxed text-zinc-300",
+        "small": "text-xs uppercase tracking-[0.25em] text-amber-400/90 font-medium"
+      }
+    }
+  },
+  "colors": {
+    "theme": "Dark Regal Luxury with Warm Gold & Imperial Crimson Accents",
+    "palette": {
+      "background": "#0C0A09",
+      "backgroundSecondary": "#14110F",
+      "surface": "#1C1917",
+      "surfaceBorder": "rgba(217, 119, 6, 0.25)",
+      "goldPrimary": "#D97706",
+      "goldAccent": "#F59E0B",
+      "goldLight": "#FDE68A",
+      "goldGradient": "linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%)",
+      "crimsonAccent": "#881337",
+      "emeraldAccent": "#064E3B",
+      "textPrimary": "#FAFAFA",
+      "textSecondary": "#A1A1AA",
+      "textMuted": "#71717A"
+    },
+    "cssVariables": {
+      "--background": "20 14.3% 4.1%",
+      "--foreground": "60 9.1% 97.8%",
+      "--card": "24 9.8% 10%",
+      "--card-foreground": "60 9.1% 97.8%",
+      "--popover": "20 14.3% 4.1%",
+      "--popover-foreground": "60 9.1% 97.8%",
+      "--primary": "38 92% 50%",
+      "--primary-foreground": "24 9.8% 10%",
+      "--secondary": "12 6.5% 15.1%",
+      "--secondary-foreground": "60 9.1% 97.8%",
+      "--muted": "12 6.5% 15.1%",
+      "--muted-foreground": "24 5.4% 63.9%",
+      "--accent": "38 92% 50%",
+      "--accent-foreground": "24 9.8% 10%",
+      "--border": "12 6.5% 20%",
+      "--input": "12 6.5% 20%",
+      "--ring": "38 92% 50%"
+    }
+  },
+  "image_urls": {
+    "groom2b_cdn_products": [
+      {
+        "category": "Swarnalayam Collection",
+        "title": "Swarnalayam Gold Embroidered Sherwani",
+        "price": "₹64,500",
+        "url": "https://groom2b.in/cdn/shop/files/swarnalayam.png?width=800",
+        "description": "Golden Traditions, Modern Grooming Elegance in pure zardozi threadwork."
+      },
+      {
+        "category": "Vaikunta Vaibhavam",
+        "title": "Vaikunta Silk Pattu Pancha & Sadri Set",
+        "price": "₹38,000",
+        "url": "https://groom2b.in/cdn/shop/files/402_afc00aa0-389e-40b4-9e71-09a6c13faaaa.png?width=800",
+        "description": "An Ode To Divine Elegance with woven zari border."
+      }
+    ],
+    "editorial_unsplash_photos": [
+      {
+        "category": "Hero Banner",
+        "url": "https://images.unsplash.com/photo-1783188223159-242c6907bc06?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBncm9vbSUyMHNoZXJ3YW5pJTIwd2VkZGluZyUyMGx1eHVyeSUyMGZhc2hpb258ZW58MHx8fHwxNzkzMzY4NjA5fDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Royal white sherwani hanging against intricate ornate golden doors"
+      },
+      {
+        "category": "Royal Pearl Detailing",
+        "url": "https://images.unsplash.com/photo-1783188223567-e98c411c57cd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHszfHxpbmRpYW4lMjBncm9vbSUyMHNoZXJ3YW5pJTIwd2VkZGluZyUyMGx1eHVyeSUyMGZhc2hpb258ZW58MHx8fHwxNzkzMzY4NjA5fDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Groom outfit with multi-layered emerald and pearl mala"
+      },
+      {
+        "category": "Floral Bridal Background",
+        "url": "https://images.unsplash.com/photo-1783188223126-69e5d0b56f39?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBncm9vbSUyMHNoZXJ3YW5pJTIwd2VkZGluZyUyMGx1eHVyeSUyMGZhc2hpb258ZW58MHx8fHwxNzkzMzY4NjA5fDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Cream handcrafted sherwani surrounded by bougainvillea blossoms"
+      },
+      {
+        "category": "Royal Arch Architecture",
+        "url": "https://images.unsplash.com/photo-1761472606347-bfebc5a3e546?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjByb3lhbCUyMHBhbGFjZSUyMGFyY2hpdGVjdHVyYWwlMjB3ZWRkaW5nJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3OTMzNjg2MDl8MA&ixlib=rb-4.1.0&q=85",
+        "alt": "Palatial grand archway entrance with chandeliers"
+      },
+      {
+        "category": "Craftsmanship Texture",
+        "url": "https://images.pexels.com/photos/28802603/pexels-photo-28802603.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "alt": "Close-up of royal zardozi embroidery"
+      }
+    ]
+  },
+  "layout_and_sections": [
+    {
+      "sectionId": "announcement-and-nav",
+      "componentName": "HeaderNav",
+      "description": "Sticky dark-gold glassmorphism header with announcement ticker bar ('Worldwide Shipping • Jubilee Hills & California Boutiques • Book Virtual Consultation')",
+      "testIds": {
+        "nav": "groom2b-main-nav",
+        "logo": "groom2b-logo-link",
+        "virtualTryOnBtn": "nav-virtual-tryon-btn",
+        "bookConsultationBtn": "nav-book-consultation-btn",
+        "whatsappBtn": "nav-whatsapp-btn"
+      }
+    },
+    {
+      "sectionId": "hero-kinetic",
+      "componentName": "HeroKinetic",
+      "description": "Editorial high-impact hero section with parallax backdrop image, masked metallic golden typography 'WE CELEBRATE YOU', countdown to wedding season, and dual call-to-action.",
+      "testIds": {
+        "ctaPrimary": "hero-explore-collections-btn",
+        "ctaSecondary": "hero-virtual-tryon-btn"
+      }
+    },
+    {
+      "sectionId": "royal-stats-marquee",
+      "componentName": "StatsMarquee",
+      "description": "Continuous luxury marquee bar showcasing stats (1,00,000+ Outfits Created, 20,000+ Grooms Served, 4.8★ Google Rating, Jubilee Hills & Milpitas Boutiques)",
+      "testIds": {
+        "container": "stats-marquee-container"
+      }
+    },
+    {
+      "sectionId": "named-collections-bento",
+      "componentName": "CollectionsBento",
+      "description": "Asymmetric Bento Grid showcasing 6 flagship named collections: Swarnalayam, Vaikunta Vaibhavam, Namam Collection, Peddamma Collection, Baraat Collection, and Royal Designer Suits.",
+      "testIds": {
+        "grid": "collections-bento-grid",
+        "swarnalayamCard": "collection-card-swarnalayam",
+        "vaikuntaCard": "collection-card-vaikunta",
+        "namamCard": "collection-card-namam",
+        "peddammaCard": "collection-card-peddamma",
+        "baraatCard": "collection-card-baraat",
+        "suitsCard": "collection-card-suits"
+      }
+    },
+    {
+      "sectionId": "virtual-tryon-interactive",
+      "componentName": "VirtualTryOnSection",
+      "description": "Interactive 'See It On You' Virtual Try-On showcase modal trigger with mannequin toggle, body measurement selector, and instant live preview simulator.",
+      "testIds": {
+        "tryOnContainer": "virtual-tryon-section",
+        "launchTryOnModalBtn": "launch-virtual-tryon-modal-btn"
+      }
+    },
+    {
+      "sectionId": "latest-arrivals-catalog",
+      "componentName": "LatestArrivals",
+      "description": "Interactive product showcase rail with category filter tabs (Sherwanis, Indo-Western, Pattu Pancha, Tuxedos, Sadris, Kurtas) with real INR pricing and Quick View detail drawer.",
+      "testIds": {
+        "productGrid": "latest-arrivals-product-grid",
+        "categoryFilter": "arrivals-category-filter-tabs",
+        "quickViewBtn": "product-card-quickview-btn"
+      }
+    },
+    {
+      "sectionId": "shop-by-occasion",
+      "componentName": "ShopByOccasion",
+      "description": "Editorial visual grid mapping outfits to key wedding celebrations: Wedding Day, Reception, Sangeet Night, Haldi & Mehendi, Dhoti Ceremony, and Festive Galas.",
+      "testIds": {
+        "occasionGrid": "shop-by-occasion-grid"
+      }
+    },
+    {
+      "sectionId": "stylist-consultation",
+      "componentName": "StylistConsultation",
+      "description": "Personal Stylist & Custom Tailoring booking banner with calendar date picker, store location picker (Hyderabad vs Milpitas vs Virtual Call), and direct Calendly modal integration.",
+      "testIds": {
+        "consultationForm": "stylist-consultation-form",
+        "submitBookingBtn": "stylist-book-slot-btn"
+      }
+    },
+    {
+      "sectionId": "client-testimonials",
+      "componentName": "ClientTestimonials",
+      "description": "Luxury photo-reviews wall featuring real grooms from USA and India with verified Google & Justdial 4.8★ rating badges.",
+      "testIds": {
+        "reviewsContainer": "client-reviews-carousel"
+      }
+    },
+    {
+      "sectionId": "store-boutiques",
+      "componentName": "StoreBoutiques",
+      "description": "Dual flagship store showcase (Jubilee Hills, Hyderabad & Milpitas, California) with store hours, map preview link, directions, and instant callback request.",
+      "testIds": {
+        "boutiquesGrid": "store-boutiques-grid",
+        "callBackForm": "store-callback-form",
+        "submitCallBackBtn": "submit-callback-form-btn"
+      }
+    },
+    {
+      "sectionId": "footer-grand",
+      "componentName": "FooterGrand",
+      "description": "Rich dark gold footer with brand manifesto, royal motif embroidery watermark, store address links, newsletter signup, and copyright statement.",
+      "testIds": {
+        "footer": "groom2b-grand-footer",
+        "newsletterEmailInput": "footer-newsletter-email-input",
+        "newsletterSubmitBtn": "footer-newsletter-submit-btn"
+      }
+    }
+  ],
+  "instructions_to_main_agent": [
+    "Replace stock splash screen completely in App.js.",
+    "Install and integrate Lenis smooth scrolling if possible or optimize Framer Motion scroll triggers.",
+    "Implement high-contrast dark gold aesthetics with crisp 1px borders (border-amber-500/30) and glassmorphism (backdrop-blur-md bg-zinc-950/80).",
+    "Ensure ALL interactive components (buttons, tabs, form inputs, modals) have explicit data-testid attributes defined in layout_and_sections.",
+    "Include full working contact / call-back modal and virtual try-on interactive drawer with state management.",
+    "Use direct product CDN images from GROOM2B and Unsplash photos provided in image_urls.",
+    "Do not use transparent dropdown backgrounds or low contrast grey text on dark backgrounds.",
+    "Ensure standard clean JS code without TypeScript syntax errors."
+  ]
+}
