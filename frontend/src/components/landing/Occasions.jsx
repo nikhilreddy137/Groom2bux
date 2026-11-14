@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Reveal, SectionHead } from "./Reveal";
-import { OCCASIONS, SADRI_IMG } from "@/lib/content";
+import { OCCASIONS, SADRI_IMG, occasionUrl } from "@/lib/content";
 
 export const Occasions = () => {
   const [active, setActive] = useState(1);
@@ -29,12 +30,12 @@ export const Occasions = () => {
           </Reveal>
         </div>
 
-        <ul data-testid="occasions-list" className="lg:col-span-6 lg:pt-24 divide-y divide-[rgba(18,16,16,0.15)] border-y border-[rgba(18,16,16,0.15)]">
+        <ul data-testid="occasions-list" className="lg:col-span-6 lg:pt-24 divide-y divide-[rgba(31,7,13,0.15)] border-y border-[rgba(31,7,13,0.15)]">
           {OCCASIONS.map((o, i) => (
             <Reveal key={o.name} delay={i * 0.05}>
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  to={occasionUrl(o.name)}
                   data-testid={`occasion-item-${o.name.toLowerCase().replace(/\s/g, "-")}`}
                   onMouseEnter={() => setActive(i)}
                   onFocus={() => setActive(i)}
@@ -45,7 +46,7 @@ export const Occasions = () => {
                     <span className="font-display text-4xl lg:text-6xl font-light leading-none">{o.name}</span>
                   </div>
                   <ArrowRight size={22} className={`transition-transform duration-500 ${active === i ? "translate-x-0 opacity-100" : "-translate-x-3 opacity-30"}`} />
-                </a>
+                </Link>
               </li>
             </Reveal>
           ))}

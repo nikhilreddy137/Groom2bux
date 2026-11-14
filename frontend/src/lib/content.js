@@ -1,12 +1,14 @@
 const cdn = (file, w = 800) => `https://groom2b.in/cdn/shop/files/${file}?width=${w}`;
 
 export const NAV_LINKS = [
-  { label: "Collections", href: "#collections" },
-  { label: "Categories", href: "#categories" },
-  { label: "Try On", href: "#tryon" },
-  { label: "Occasions", href: "#occasions" },
-  { label: "Stores", href: "#stores" },
+  { label: "Collections", to: "/collections", mega: "collections" },
+  { label: "Shop", to: "/collections", mega: "shop" },
+  { label: "Virtual Try-On", to: "/#tryon" },
+  { label: "Real Grooms", to: "/#reviews" },
+  { label: "Stores", to: "/#stores" },
 ];
+
+export const WHATSAPP_URL = "https://wa.me/919515100372";
 
 export const STATS = [
   { value: "1,00,000+", label: "Outfits created" },
@@ -20,6 +22,7 @@ export const COLLECTIONS = [
     id: "swarnalayam",
     name: "Swarnalayam",
     line: "Golden traditions, modern grooming elegance",
+    story: "Temple-gold zari, antique motifs and rich silks — a collection drawn from the gilded sanctums of the South, cut for the modern groom.",
     img: cdn("swarnalayam.png", 1000),
     span: "lg:col-span-2 lg:row-span-2",
   },
@@ -27,6 +30,7 @@ export const COLLECTIONS = [
     id: "vaikunta",
     name: "Vaikunta Vaibhavam",
     line: "An ode to divine elegance",
+    story: "Shankha, chakra and namam worked by hand into pattu and brocade. Quiet, devotional, and unmistakably regal.",
     img: cdn("vaikunta.png"),
     span: "",
   },
@@ -34,6 +38,7 @@ export const COLLECTIONS = [
     id: "namam",
     name: "Namam",
     line: "A tribute to sacred heritage",
+    story: "Sacred symbols rendered in fine embroidery on ivory and gold — made for muhurtham mornings and family blessings.",
     img: cdn("Frame_343.png"),
     span: "",
   },
@@ -41,6 +46,7 @@ export const COLLECTIONS = [
     id: "peddamma",
     name: "Peddamma",
     line: "Where heritage meets regal elegance",
+    story: "Bold heritage colour, heavy handwork and the warmth of a Telugu wedding, in silhouettes that sit easy all day.",
     img: cdn("pedamma.png"),
     span: "",
   },
@@ -48,6 +54,7 @@ export const COLLECTIONS = [
     id: "baraat",
     name: "Baraat",
     line: "Made for the grandest entrance",
+    story: "Statement sherwanis and layered sets with the presence a grand entrance deserves — built to be seen from the pallaki.",
     img: cdn("df78c1e3-2639-4f63-951e-ba9e97603a38_1.png"),
     span: "",
   },
@@ -55,6 +62,7 @@ export const COLLECTIONS = [
     id: "suits",
     name: "Designer Suits",
     line: "Sharp silhouettes, exceptional craftsmanship",
+    story: "Two-piece, three-piece and double-breasted tailoring in fine wools and satins, cut on your own pattern.",
     img: cdn("Frame_344.png", 1000),
     span: "lg:col-span-2",
   },
@@ -135,7 +143,7 @@ export const OCCASIONS = [
   { name: "Reception", img: cdn("Frame_344.png", 600) },
   { name: "Sangeet", img: cdn("Frame_357.png", 600) },
   { name: "Haldi", img: cdn("Frame_355.png", 600) },
-  { name: "Festive", img: cdn("Frame_356.png", 600) },
+  { name: "Engagement", img: cdn("Frame_356.png", 600) },
 ];
 
 export const TRYON_IMG = cdn("Frame_364.png", 1600);
@@ -196,6 +204,11 @@ export const STORES = [
   },
 ];
 
-export const OCCASION_OPTIONS = ["Wedding", "Reception", "Sangeet", "Haldi", "Dhoti Ceremony", "Festive"];
+export const OCCASION_OPTIONS = ["Wedding", "Reception", "Sangeet", "Haldi", "Dhoti Ceremony", "Engagement"];
 
 export const formatINR = (n) => `₹${n.toLocaleString("en-IN")}`;
+
+export const collectionUrl = (id) => `/collections?c=${id}`;
+export const categoryUrl = (name) => `/collections?category=${encodeURIComponent(name)}`;
+export const occasionUrl = (name) => `/collections?occasion=${encodeURIComponent(name)}`;
+export const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");

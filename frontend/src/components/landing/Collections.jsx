@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal, SectionHead } from "./Reveal";
-import { COLLECTIONS } from "@/lib/content";
+import { COLLECTIONS, collectionUrl } from "@/lib/content";
 
 const Card = ({ c, i }) => (
   <Reveal delay={(i % 3) * 0.08} className={`${c.span} group relative overflow-hidden bg-[var(--bone)] img-zoom`}>
-    <a href="#contact" data-testid={`collection-card-${c.id}`} className="block h-full min-h-[320px] lg:min-h-0">
+    <Link to={collectionUrl(c.id)} data-testid={`collection-card-${c.id}`} className="block h-full min-h-[320px] lg:min-h-0">
       <img src={c.img} alt={c.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(18,16,16,0.85)] via-[rgba(18,16,16,0.15)] to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(31,7,13,0.85)] via-[rgba(31,7,13,0.15)] to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8 text-[var(--ivory)] flex items-end justify-between gap-4">
         <div>
           <p className="eyebrow text-[var(--gold-light)] mb-2">{String(i + 1).padStart(2, "0")}</p>
@@ -17,7 +18,7 @@ const Card = ({ c, i }) => (
           <ArrowUpRight size={16} />
         </span>
       </div>
-    </a>
+    </Link>
   </Reveal>
 );
 
@@ -31,9 +32,10 @@ export const Collections = () => (
           copy="Six named collections, each rooted in a different tradition — from temple gold to the grandest baraat entrance."
         />
         <Reveal delay={0.3}>
-          <a href="#contact" data-testid="collections-view-all-link" className="link-underline eyebrow text-[var(--ink)]">
-            View all collections
-          </a>
+          <Link to="/collections" data-testid="collections-view-all-link" className="btn-ink">
+            <span>View all collections</span>
+            <ArrowUpRight size={16} />
+          </Link>
         </Reveal>
       </div>
 

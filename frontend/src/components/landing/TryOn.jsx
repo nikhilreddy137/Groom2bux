@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Camera, Ruler, Sparkles } from "lucide-react";
 import { Reveal, SectionHead } from "./Reveal";
 import { TRYON_IMG } from "@/lib/content";
+import { useBooking } from "@/context/BookingContext";
 
 const STEPS = [
   { icon: Camera, title: "Upload a photo", copy: "One clear picture is all it takes." },
@@ -12,6 +13,7 @@ const STEPS = [
 
 export const TryOn = () => {
   const ref = useRef(null);
+  const { openBooking } = useBooking();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
@@ -29,7 +31,7 @@ export const TryOn = () => {
             {STEPS.map((s, i) => (
               <Reveal key={s.title} delay={0.1 + i * 0.1}>
                 <div className="flex gap-5 items-start">
-                  <span className="h-12 w-12 shrink-0 border border-[rgba(184,137,58,0.5)] text-[var(--gold-light)] inline-flex items-center justify-center">
+                  <span className="h-12 w-12 shrink-0 border border-[rgba(232,203,138,0.5)] text-[var(--gold-light)] inline-flex items-center justify-center">
                     <s.icon size={18} />
                   </span>
                   <div>
@@ -41,9 +43,9 @@ export const TryOn = () => {
             ))}
           </div>
           <Reveal delay={0.4}>
-            <a href="#contact" data-testid="launch-virtual-tryon-btn" className="btn-ink !bg-[var(--gold-light)] !text-[var(--ink)] mt-12">
-              <span>Try now</span>
-            </a>
+            <button type="button" onClick={() => openBooking()} data-testid="launch-virtual-tryon-btn" className="btn-gold mt-12">
+              Try it with a stylist
+            </button>
           </Reveal>
         </div>
 

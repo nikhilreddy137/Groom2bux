@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, Plus } from "lucide-react";
+import { useBooking } from "@/context/BookingContext";
 import { Reveal, SectionHead } from "./Reveal";
 import { PRODUCTS, PRODUCT_TABS, formatINR } from "@/lib/content";
 
 export const Arrivals = () => {
   const [tab, setTab] = useState(PRODUCT_TABS[0]);
   const items = PRODUCTS.filter((p) => p.cat === tab);
+  const { openBooking } = useBooking();
 
   return (
     <section id="arrivals" data-testid="arrivals-section" className="bg-[var(--ivory)] py-28 lg:py-40">
@@ -21,7 +24,7 @@ export const Arrivals = () => {
                   data-testid={`arrivals-tab-${t.toLowerCase().replace(/\s/g, "-")}`}
                   onClick={() => setTab(t)}
                   className={`relative px-5 py-2.5 text-[11px] uppercase tracking-[0.22em] font-semibold border transition-colors duration-300 ${
-                    tab === t ? "bg-[var(--ink)] text-[var(--ivory)] border-[var(--ink)]" : "border-[rgba(18,16,16,0.2)] hover:border-[var(--ink)]"
+                    tab === t ? "bg-[var(--ink)] text-[var(--ivory)] border-[var(--ink)]" : "border-[rgba(31,7,13,0.2)] hover:border-[var(--ink)]"
                   }`}
                 >
                   {t}
@@ -48,8 +51,9 @@ export const Arrivals = () => {
                   <img src={p.img} alt={p.name} loading="lazy" className="h-full w-full object-cover" />
                   <button
                     data-testid={`product-quickview-btn-${i}`}
-                    className="absolute bottom-4 right-4 h-11 w-11 bg-[var(--ivory)] text-[var(--ink)] inline-flex items-center justify-center translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-[opacity,transform] duration-500 hover:bg-[var(--crimson)] hover:text-[var(--ivory)]"
-                    aria-label="Quick view"
+                    onClick={() => openBooking({ interest: p.name })}
+                    className="absolute bottom-4 right-4 h-11 w-11 bg-[var(--ivory)] text-[var(--ink)] inline-flex items-center justify-center lg:translate-y-3 lg:opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-[opacity,transform] duration-500 hover:bg-[var(--crimson)] hover:text-[var(--ivory)]"
+                    aria-label="Enquire about this outfit"
                   >
                     <Plus size={18} />
                   </button>
@@ -64,6 +68,12 @@ export const Arrivals = () => {
               </motion.article>
             ))}
           </AnimatePresence>
+        </div>
+        <div className="mt-16 flex justify-center">
+          <Link to="/collections" data-testid="arrivals-view-all-link" className="btn-ink">
+            <span>Shop all styles</span>
+            <ArrowUpRight size={16} />
+          </Link>
         </div>
       </div>
     </section>

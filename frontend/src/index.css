@@ -3,22 +3,24 @@
 @tailwind utilities;
 
 :root {
-    --ivory: #f3eee4;
-    --bone: #e9e2d3;
-    --ink: #121010;
-    --ink-2: #1b1816;
-    --crimson: #9c1b2c;
+    --ivory: #f7f2e8;
+    --bone: #ece4d2;
+    --ink: #1f070d;
+    --ink-2: #2e0b14;
+    --wine: #6a1022;
+    --crimson: #9b1c31;
+    --maroon-deep: #4b0c1a;
     --gold: #b8893a;
-    --gold-light: #e2c483;
-    --stone: #6b645c;
+    --gold-light: #e8cb8a;
+    --stone: #6b5f5a;
 
     --background: 40 33% 92%;
-    --foreground: 12 9% 7%;
+    --foreground: 345 63% 7%;
     --card: 40 33% 95%;
     --card-foreground: 12 9% 7%;
     --popover: 40 33% 95%;
     --popover-foreground: 12 9% 7%;
-    --primary: 12 9% 7%;
+    --primary: 345 63% 7%;
     --primary-foreground: 40 33% 92%;
     --secondary: 38 26% 87%;
     --secondary-foreground: 12 9% 7%;
@@ -74,6 +76,10 @@ body {
 
 .eyebrow {
     @apply text-[11px] uppercase tracking-[0.32em] font-medium;
+}
+
+.grain {
+    isolation: isolate;
 }
 
 .grain::before {
@@ -180,12 +186,63 @@ body {
 
 .field {
     @apply w-full bg-transparent border-0 border-b py-4 text-base outline-none;
-    border-color: rgba(18, 16, 16, 0.25);
+    border-color: rgba(31, 7, 13, 0.25);
     transition: border-color 0.3s ease;
 }
 .field:focus {
     border-color: var(--ink);
 }
 .field::placeholder {
-    color: rgba(18, 16, 16, 0.4);
+    color: rgba(31, 7, 13, 0.4);
+}
+
+.btn-gold {
+    @apply inline-flex items-center justify-center gap-3 px-7 py-4 text-[12px] uppercase tracking-[0.22em] font-semibold;
+    background: linear-gradient(100deg, #c99a47 0%, #ecd297 50%, #c99a47 100%);
+    background-size: 200% 100%;
+    color: var(--ink);
+    transition:
+        background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+.btn-gold:hover {
+    background-position: 100% 0;
+}
+.btn-gold:active {
+    transform: scale(0.98);
+}
+.btn-gold:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.no-scrollbar {
+    scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.pick {
+    border: 1px solid rgba(31, 7, 13, 0.18);
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+.pick:hover {
+    border-color: var(--ink);
+}
+.pick[aria-pressed="true"] {
+    border-color: var(--wine);
+    background: var(--ink);
+    color: var(--ivory);
+    box-shadow: inset 0 0 0 1px var(--gold);
+}
+
+:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
 }

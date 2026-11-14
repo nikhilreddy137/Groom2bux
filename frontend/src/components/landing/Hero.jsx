@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowDown, ArrowUpRight, CalendarCheck } from "lucide-react";
 import { EDITORIAL_IMG, STATS } from "@/lib/content";
+import { useBooking } from "@/context/BookingContext";
 
 const EASE = [0.22, 1, 0.36, 1];
 
@@ -20,6 +22,7 @@ const Word = ({ children, delay, className = "" }) => (
 
 export const Hero = () => {
   const ref = useRef(null);
+  const { openBooking } = useBooking();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
@@ -36,7 +39,7 @@ export const Hero = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 2, ease: EASE }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[rgba(18,16,16,0.6)] to-[rgba(18,16,16,0.25)] lg:bg-gradient-to-r lg:from-[var(--ink)] lg:via-[rgba(18,16,16,0.72)] lg:to-[rgba(18,16,16,0.15)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[rgba(47,9,18,0.6)] to-[rgba(47,9,18,0.2)] lg:bg-gradient-to-r lg:from-[var(--ink)] lg:via-[rgba(75,12,26,0.62)] lg:to-[rgba(47,9,18,0.05)]" />
         <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-[var(--ink)] to-transparent" />
       </motion.div>
 
@@ -75,11 +78,13 @@ export const Hero = () => {
             transition={{ duration: 0.9, delay: 1.25 }}
             className="lg:col-span-7 flex flex-wrap gap-4 lg:justify-end"
           >
-            <a href="#collections" data-testid="hero-explore-collections-btn" className="btn-ink !bg-[var(--ivory)] !text-[var(--ink)]">
-              <span>Explore collections</span>
-              <ArrowUpRight size={16} />
-            </a>
-            <a href="#tryon" data-testid="hero-virtual-tryon-btn" className="btn-outline border-white/40 text-[var(--ivory)] hover:bg-[var(--ivory)] hover:text-[var(--ink)]">
+            <button type="button" onClick={() => openBooking()} data-testid="hero-book-stylist-btn" className="btn-gold">
+              <CalendarCheck size={16} /> Book a stylist
+            </button>
+            <Link to="/collections" data-testid="hero-explore-collections-btn" className="btn-outline border-white/40 text-[var(--ivory)] hover:bg-[var(--ivory)] hover:text-[var(--ink)]">
+              Explore collections <ArrowUpRight size={16} />
+            </Link>
+            <a href="#tryon" data-testid="hero-virtual-tryon-btn" className="link-underline self-center text-[12px] uppercase tracking-[0.22em] font-semibold text-[var(--gold-light)] ml-2">
               See it on you
             </a>
           </motion.div>

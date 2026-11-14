@@ -6,7 +6,7 @@ import os
 import logging
 from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict, EmailStr
-from typing import List
+from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
 
@@ -68,6 +68,42 @@ async def list_contact_leads():
     for d in docs:
         if isinstance(d["created_at"], str):
             d["created_at"] = datetime.fromisoformat(d["created_at"])
+    return docs
+
+class BookingCreate(BaseModel):
+    occasion: str = Field(min_length=2, max_length=60)
+    outfits: List[str] = Field(default_factory=list, max_length=12)
+    mode: str = Field(min_length=2, max_length=60)
+    date: str = Field(pattern=r"^\d{4}-\d{2}-\d{2}$")
+    time: str = Field(min_length=3, max_length=20)
+    name: str = Field(min_length=2, max_length=80)
+    phone: str = Field(min_length=7, max_length=20)
+    email: Optional[EmailStr] = None
+    notes: str = Field(default="", max_length=1000)
+    interest: str = Field(default="", max_length=200)
+
+
+class Booking(BookingCreate):
+    model_config = ConfigDict(extra="ignore")
+
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+
+@api_router.post("/bookings", response_model=Booking, status_code=201)
+async def create_booking(payload: BookingCreate):
+    booking = Booking(**payload.model_dump())
+    doc = booking.model_dump()
+    doc["created_at"] = doc["created_at"].isoformat()
+    await db.stylist_bookings.insert_one(doc)
+    return booking
+
+
+@api_router.get("/bookings", response_model=List[Booking])
+async def list_bookings():
+    docs = await db.stylist_bookings.find({}, {"_id": 0}).sort("created_at", -1).to_list(200)
+    for d in docs:
+        d["created_at"] = datetime.fromisoformat(d["created_at"])
     return docs
 
 # Add your routes to the router instead of directly to app

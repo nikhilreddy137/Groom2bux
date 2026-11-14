@@ -35,7 +35,7 @@ export const Testimonials = () => (
 
       <div data-testid="client-reviews-grid" className="grid lg:grid-cols-3 gap-3">
         {TESTIMONIALS.map((t, i) => (
-          <Reveal key={t.name} delay={i * 0.1} className="group relative bg-[var(--ink-2)] border border-white/[0.06] p-8 lg:p-10 flex flex-col justify-between min-h-[420px] overflow-hidden">
+          <Reveal key={t.name} delay={i * 0.1} className="group relative bg-[var(--ink-2)] border border-[rgba(232,203,138,0.14)] p-8 lg:p-10 flex flex-col justify-between min-h-[420px] overflow-hidden">
             <img src={t.img} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top opacity-0 group-hover:opacity-25 transition-opacity duration-700" />
             <div className="relative">
               <span className="font-display text-7xl leading-none text-[var(--gold)]">“</span>
