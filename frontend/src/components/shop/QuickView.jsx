@@ -56,12 +56,12 @@ export const QuickView = ({ product, onClose }) => {
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {p.occasions.map((o) => (
-                <span key={o} className="border border-[rgba(31,7,13,0.2)] px-3 py-1.5 text-xs">
+                <span key={o} className="border border-[rgba(20,17,15,0.2)] px-3 py-1.5 text-xs">
                   {o}
                 </span>
               ))}
             </div>
-            <ul className="mt-7 space-y-3 text-sm text-[var(--stone)] border-t border-[rgba(31,7,13,0.12)] pt-6">
+            <ul className="mt-7 space-y-3 text-sm text-[var(--stone)] border-t border-[rgba(20,17,15,0.12)] pt-6">
               {PERKS.map(([Icon, text]) => (
                 <li key={text} className="flex gap-3">
                   <Icon size={16} className="mt-0.5 shrink-0 text-[var(--gold)]" /> {text}
@@ -72,7 +72,7 @@ export const QuickView = ({ product, onClose }) => {
               <button type="button" data-testid="quickview-book-btn" onClick={book} className="btn-gold w-full">
                 <CalendarCheck size={16} /> Book a stylist for this look
               </button>
-              <a href={`${WHATSAPP_URL}?text=${encodeURIComponent(`Hi GROOM2B, I'm interested in: ${p.name}`)}`} target="_blank" rel="noreferrer" data-testid="quickview-whatsapp-link" className="btn-outline justify-center border-[rgba(31,7,13,0.25)] hover:bg-[var(--ink)] hover:text-[var(--ivory)]">
+              <a href={`${WHATSAPP_URL}?text=${encodeURIComponent(`Hi GROOM2B, I'm interested in: ${p.name}`)}`} target="_blank" rel="noreferrer" data-testid="quickview-whatsapp-link" className="btn-outline justify-center border-[rgba(20,17,15,0.25)] hover:bg-[var(--ink)] hover:text-[var(--ivory)]">
                 <MessageCircle size={16} /> Ask on WhatsApp
               </a>
             </div>

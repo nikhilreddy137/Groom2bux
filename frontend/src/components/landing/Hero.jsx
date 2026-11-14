@@ -30,20 +30,22 @@ export const Hero = () => {
 
   return (
     <section id="top" ref={ref} data-testid="hero-section" className="relative min-h-[100svh] bg-[var(--ink)] text-[var(--ivory)] overflow-hidden grain">
-      <motion.div style={{ y: imgY }} className="absolute inset-0">
+      <motion.div style={{ y: imgY }} className="absolute inset-x-0 top-0 h-[58svh] lg:h-full">
         <motion.img
           src={EDITORIAL_IMG}
           alt="Groom in an ivory embroidered sherwani"
-          className="h-full w-full object-cover object-[70%_20%] lg:object-[62%_center]"
+          className="h-full w-full object-cover object-[22%_center] lg:object-[left_14%]"
           initial={{ scale: 1.15, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 2, ease: EASE }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[rgba(47,9,18,0.6)] to-[rgba(47,9,18,0.2)] lg:bg-gradient-to-r lg:from-[var(--ink)] lg:via-[rgba(75,12,26,0.62)] lg:to-[rgba(47,9,18,0.05)]" />
-        <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-[var(--ink)] to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--ink)_0%,rgba(20,17,15,0.25)_38%,rgba(20,17,15,0)_60%)] lg:bg-[linear-gradient(270deg,var(--ink)_0%,rgba(20,17,15,0.9)_26%,rgba(20,17,15,0.35)_48%,rgba(20,17,15,0)_64%)]" />
+        <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-[rgba(20,17,15,0.75)] to-transparent" />
+        <div className="hidden lg:block absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-[var(--ink)] to-transparent" />
       </motion.div>
 
-      <motion.div style={{ y: textY, opacity: fade }} className="relative z-10 mx-auto max-w-[1440px] px-6 lg:px-12 pt-36 lg:pt-52 pb-16 lg:pb-40">
+      <motion.div style={{ y: textY, opacity: fade }} className="relative z-10 mx-auto max-w-[1440px] px-6 lg:px-12 pt-[46svh] lg:pt-44 pb-14 lg:pb-44">
+        <div className="lg:ml-auto lg:w-[45%]">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,20 +55,22 @@ export const Hero = () => {
           <span className="h-px w-10 bg-[var(--gold)]" /> Bespoke groomswear · Est. Hyderabad
         </motion.p>
 
-        <h1 className="font-display font-light leading-[0.9] tracking-[-0.02em] text-[clamp(3.4rem,10.5vw,10.5rem)]">
-          <Word delay={0.6}>The man</Word> <br className="hidden sm:block" />
-          <Word delay={0.72}>of the</Word>{" "}
-          <Word delay={0.84} className="italic font-normal gold-text pr-3">
-            moment.
-          </Word>
+        <h1 className="font-display font-light leading-[0.9] tracking-[-0.02em] text-[clamp(3.2rem,5.3vw,6.2rem)]">
+          <Word delay={0.6}>The man</Word> <br />
+          <span className="whitespace-nowrap">
+            <Word delay={0.72}>of the</Word>{" "}
+            <Word delay={0.84} className="italic font-normal gold-text pr-3">
+              moment.
+            </Word>
+          </span>
         </h1>
 
-        <div className="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-10 items-end">
+        <div className="mt-8 lg:mt-10 flex flex-col gap-8">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.1 }}
-            className="lg:col-span-5 text-base md:text-lg text-[#d8d0c2] leading-relaxed max-w-md"
+            className="text-base md:text-lg text-[#d8d0c2] leading-relaxed max-w-md"
           >
             Hand-embroidered sherwanis, pattu pancha and sharp designer suits — cut to your measure
             by stylists who have dressed over twenty thousand grooms.
@@ -76,7 +80,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 1.25 }}
-            className="lg:col-span-7 flex flex-wrap gap-4 lg:justify-end"
+            className="flex flex-wrap gap-3"
           >
             <button type="button" onClick={() => openBooking()} data-testid="hero-book-stylist-btn" className="btn-gold">
               <CalendarCheck size={16} /> Book a stylist
@@ -88,6 +92,7 @@ export const Hero = () => {
               See it on you
             </a>
           </motion.div>
+        </div>
         </div>
       </motion.div>
 
@@ -110,7 +115,7 @@ export const Hero = () => {
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
-        className="absolute right-6 lg:right-12 top-[58%] z-10 hidden lg:flex items-center gap-3 eyebrow text-[#a69d8f]"
+        className="absolute left-12 bottom-36 z-10 hidden lg:flex items-center gap-3 eyebrow text-[var(--ivory)]"
       >
         Scroll <ArrowDown size={14} />
       </motion.div>

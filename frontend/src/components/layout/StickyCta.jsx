@@ -24,7 +24,7 @@ export const StickyCta = () => {
           animate={{ y: 0 }}
           exit={{ y: 80 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:hidden fixed bottom-0 inset-x-0 z-40 flex gap-2 p-3 bg-[rgba(31,7,13,0.94)] backdrop-blur-xl border-t border-white/10"
+          className="lg:hidden fixed bottom-0 inset-x-0 z-40 flex gap-2 p-3 bg-[rgba(20,17,15,0.94)] backdrop-blur-xl border-t border-white/10"
         >
           <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp" data-testid="sticky-whatsapp-btn" className="h-12 w-12 shrink-0 border border-white/25 text-[var(--ivory)] inline-flex items-center justify-center">
             <MessageCircle size={18} />

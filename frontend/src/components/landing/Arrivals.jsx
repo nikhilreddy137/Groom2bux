@@ -24,7 +24,7 @@ export const Arrivals = () => {
                   data-testid={`arrivals-tab-${t.toLowerCase().replace(/\s/g, "-")}`}
                   onClick={() => setTab(t)}
                   className={`relative px-5 py-2.5 text-[11px] uppercase tracking-[0.22em] font-semibold border transition-colors duration-300 ${
-                    tab === t ? "bg-[var(--ink)] text-[var(--ivory)] border-[var(--ink)]" : "border-[rgba(31,7,13,0.2)] hover:border-[var(--ink)]"
+                    tab === t ? "bg-[var(--ink)] text-[var(--ivory)] border-[var(--ink)]" : "border-[rgba(20,17,15,0.2)] hover:border-[var(--ink)]"
                   }`}
                 >
                   {t}

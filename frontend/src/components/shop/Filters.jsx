@@ -5,7 +5,7 @@ import { PRICE_BANDS, facetCounts } from "@/lib/catalog";
 const Option = ({ group, id, label, count, on, onClick }) => (
   <li>
     <button type="button" role="checkbox" aria-checked={on} disabled={!count && !on} data-testid={`filter-${group}-${slug(id)}`} onClick={onClick} className="group w-full flex items-center gap-3 py-2 text-left text-sm disabled:opacity-35">
-      <span className={`h-[18px] w-[18px] shrink-0 inline-flex items-center justify-center border transition-colors duration-200 ${on ? "bg-[var(--ink)] border-[var(--ink)] text-[var(--gold-light)]" : "border-[rgba(31,7,13,0.35)] group-hover:border-[var(--ink)]"}`}>
+      <span className={`h-[18px] w-[18px] shrink-0 inline-flex items-center justify-center border transition-colors duration-200 ${on ? "bg-[var(--ink)] border-[var(--ink)] text-[var(--gold-light)]" : "border-[rgba(20,17,15,0.35)] group-hover:border-[var(--ink)]"}`}>
         {on && <Check size={12} strokeWidth={3} />}
       </span>
       <span className={`flex-1 ${on ? "font-semibold" : ""}`}>{label}</span>
@@ -15,7 +15,7 @@ const Option = ({ group, id, label, count, on, onClick }) => (
 );
 
 const Group = ({ title, children }) => (
-  <fieldset className="border-t border-[rgba(31,7,13,0.14)] py-6 first:border-t-0 first:pt-0">
+  <fieldset className="border-t border-[rgba(20,17,15,0.14)] py-6 first:border-t-0 first:pt-0">
     <legend className="eyebrow text-[var(--ink)] mb-3 float-left w-full">{title}</legend>
     <ul className="clear-both">{children}</ul>
   </fieldset>

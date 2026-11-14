@@ -17,7 +17,7 @@ export const Categories = () => (
             <div className="relative aspect-[3/4] overflow-hidden bg-[var(--ivory)]">
               <img src={c.img} alt={c.name} loading="lazy" className="h-full w-full object-cover" />
             </div>
-            <div className="mt-4 flex items-baseline justify-between border-b border-[rgba(31,7,13,0.2)] pb-3">
+            <div className="mt-4 flex items-baseline justify-between border-b border-[rgba(20,17,15,0.2)] pb-3">
               <h3 className="font-display text-2xl font-light">{c.name}</h3>
               <span className="eyebrow text-[var(--stone)] group-hover:text-[var(--crimson)] transition-colors">Explore</span>
             </div>

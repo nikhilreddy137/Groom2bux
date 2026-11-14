@@ -6,7 +6,7 @@ import { useBooking } from "@/context/BookingContext";
 const Col = ({ title, children }) => (
   <div>
     <p className="eyebrow text-[var(--gold-light)] mb-5">{title}</p>
-    <ul className="space-y-3 text-sm text-[#e3d8d2]">{children}</ul>
+    <ul className="space-y-3 text-sm text-[#ddd5c8]">{children}</ul>
   </div>
 );
 
@@ -41,7 +41,7 @@ export const Footer = () => {
             <Link to="/" className="font-display text-3xl tracking-[0.18em] font-medium">
               GROOM<span className="text-[var(--gold)]">2</span>B
             </Link>
-            <p className="mt-5 text-sm text-[#cbbdb6] leading-relaxed max-w-xs">Bespoke groomswear, hand-finished in Hyderabad and delivered worldwide. We celebrate you.</p>
+            <p className="mt-5 text-sm text-[#bdb5a8] leading-relaxed max-w-xs">Bespoke groomswear, hand-finished in Hyderabad and delivered worldwide. We celebrate you.</p>
             <a href="mailto:reachgroom2b@gmail.com" className="link-underline inline-block mt-5 text-sm">
               reachgroom2b@gmail.com
             </a>
@@ -73,7 +73,7 @@ export const Footer = () => {
               {STORES.map((s) => (
                 <li key={s.city} className="pb-3">
                   <p className="font-display text-2xl text-[var(--ivory)]">{s.city}</p>
-                  <p className="mt-1 text-[#cbbdb6] leading-relaxed">{s.address}</p>
+                  <p className="mt-1 text-[#bdb5a8] leading-relaxed">{s.address}</p>
                   <p className="mt-1">
                     <a href={`tel:${s.phone.replace(/[^+\d]/g, "")}`} className="link-underline">
                       {s.phone}
@@ -88,7 +88,7 @@ export const Footer = () => {
 
         <div className="mt-16 flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-t border-white/10 pt-8">
           <p className="font-display text-[clamp(3rem,9vw,9rem)] leading-[0.8] tracking-[0.12em] font-light text-white/[0.07] select-none">GROOM2B</p>
-          <p className="text-xs text-[#a8968f] sm:text-right">
+          <p className="text-xs text-[#8f877a] sm:text-right">
             © 2026 GROOM2B · We celebrate you. <br /> Hyderabad · California
           </p>
         </div>

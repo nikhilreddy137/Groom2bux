@@ -104,7 +104,7 @@ export const StepMeet = ({ data, set }) => {
 };
 
 const Summary = ({ data }) => (
-  <dl data-testid="booking-summary" className="grid grid-cols-2 gap-x-6 gap-y-4 border border-[rgba(31,7,13,0.15)] bg-[var(--bone)] p-5 text-sm">
+  <dl data-testid="booking-summary" className="grid grid-cols-2 gap-x-6 gap-y-4 border border-[rgba(20,17,15,0.15)] bg-[var(--bone)] p-5 text-sm">
     {[
       ["Occasion", data.occasion],
       ["Outfits", data.outfits.join(", ")],
@@ -159,7 +159,7 @@ export const BookingSuccess = ({ data, onClose }) => (
       <button type="button" data-testid="booking-done-btn" onClick={onClose} className="btn-ink">
         <span>Done</span>
       </button>
-      <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" data-testid="booking-success-whatsapp-link" className="btn-outline border-[rgba(31,7,13,0.25)] hover:bg-[var(--ink)] hover:text-[var(--ivory)]">
+      <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" data-testid="booking-success-whatsapp-link" className="btn-outline border-[rgba(20,17,15,0.25)] hover:bg-[var(--ink)] hover:text-[var(--ivory)]">
         <MessageCircle size={16} /> Chat on WhatsApp
       </a>
     </div>

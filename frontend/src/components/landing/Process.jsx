@@ -31,7 +31,7 @@ export const Process = () => {
                 <p className="font-display text-7xl lg:text-8xl font-light leading-none gold-text w-fit">{String(i + 1).padStart(2, "0")}</p>
                 <p className="eyebrow text-[var(--gold-light)] mt-6">{s.time}</p>
                 <h3 className="font-display text-4xl font-light mt-2">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#d9c9c4] max-w-xs">{s.copy}</p>
+                <p className="mt-3 text-sm leading-relaxed text-[#cfc7ba] max-w-xs">{s.copy}</p>
               </li>
             </Reveal>
           ))}

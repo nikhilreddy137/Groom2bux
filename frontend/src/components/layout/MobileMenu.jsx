@@ -56,7 +56,7 @@ export const MobileMenu = ({ onClose, onBook }) => {
             {COLLECTIONS.map((c) => (
               <Link key={c.id} to={collectionUrl(c.id)} onClick={onClose} data-testid={`mobile-menu-collection-${c.id}`} className="relative block aspect-[4/5] overflow-hidden">
                 <img src={c.img} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(31,7,13,0.9)] to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(20,17,15,0.9)] to-transparent" />
                 <span className="absolute bottom-3 left-3 right-3 font-display text-xl leading-none">{c.name}</span>
               </Link>
             ))}

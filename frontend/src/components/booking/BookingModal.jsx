@@ -16,7 +16,7 @@ const PROMISES = ["Complimentary, no obligation", "30 minutes with a senior styl
 const Aside = ({ step, done }) => (
   <aside className="hidden lg:flex relative isolate w-[36%] shrink-0 flex-col justify-between bg-[var(--ink)] text-[var(--ivory)] p-10 overflow-hidden grain">
     <img src={EDITORIAL_IMG} alt="" className="absolute inset-0 h-full w-full object-cover object-[70%_top] opacity-35" />
-    <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[rgba(31,7,13,0.7)] to-[rgba(31,7,13,0.35)]" />
+    <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[rgba(20,17,15,0.7)] to-[rgba(20,17,15,0.35)]" />
     <div className="relative z-10">
       <p className="eyebrow text-[var(--gold-light)] mb-4">Private consultation</p>
       <h2 className="font-display text-5xl font-light leading-[0.98]">
@@ -85,7 +85,7 @@ export const BookingModal = () => {
     <Modal open={open} onClose={closeBooking} testid="booking-modal" label="Book a stylist" className="flex h-[94svh] lg:h-[min(740px,92vh)] lg:max-w-[1100px] bg-[var(--ivory)] text-[var(--ink)]">
       <Aside step={step} done={done} />
       <div className="flex-1 min-w-0 flex flex-col">
-        <header className="flex items-center justify-between gap-4 px-6 lg:px-10 h-16 shrink-0 border-b border-[rgba(31,7,13,0.12)]">
+        <header className="flex items-center justify-between gap-4 px-6 lg:px-10 h-16 shrink-0 border-b border-[rgba(20,17,15,0.12)]">
           <p data-testid="booking-step-indicator" className="eyebrow text-[var(--stone)]">
             {done ? "All set" : `Step ${step + 1} of ${BOOKING_STEPS.length}`}
             <span className="lg:hidden"> · Book a stylist</span>
@@ -94,7 +94,7 @@ export const BookingModal = () => {
             <X size={18} />
           </button>
         </header>
-        <div className="h-[3px] bg-[rgba(31,7,13,0.08)] shrink-0">
+        <div className="h-[3px] bg-[rgba(20,17,15,0.08)] shrink-0">
           <motion.div data-testid="booking-progress" className="h-full bg-gradient-to-r from-[var(--crimson)] to-[var(--gold)]" animate={{ width: `${done ? 100 : ((step + 1) / BOOKING_STEPS.length) * 100}%` }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} />
         </div>
 
@@ -117,7 +117,7 @@ export const BookingModal = () => {
         </div>
 
         {!done && (
-          <footer className="shrink-0 flex items-center justify-between gap-4 px-6 lg:px-10 py-4 border-t border-[rgba(31,7,13,0.12)] bg-[var(--ivory)]">
+          <footer className="shrink-0 flex items-center justify-between gap-4 px-6 lg:px-10 py-4 border-t border-[rgba(20,17,15,0.12)] bg-[var(--ivory)]">
             <button type="button" data-testid="booking-back-btn" onClick={() => setStep((s) => s - 1)} disabled={step === 0} className="inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.22em] font-semibold py-3 disabled:opacity-0 transition-opacity">
               <ArrowLeft size={16} /> Back
             </button>

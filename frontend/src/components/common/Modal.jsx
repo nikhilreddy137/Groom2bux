@@ -29,7 +29,7 @@ export const Modal = ({ open, onClose, children, testid, label, className = "" }
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35 }}
-            className="absolute inset-0 bg-[rgba(15,3,6,0.78)] backdrop-blur-sm"
+            className="absolute inset-0 bg-[rgba(8,6,5,0.78)] backdrop-blur-sm"
           />
           <motion.div
             role="dialog"

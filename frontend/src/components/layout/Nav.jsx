@@ -29,7 +29,11 @@ export const Nav = () => {
   useEffect(() => {
     if (!drawer) return undefined;
     window.__lenis?.stop();
-    return () => window.__lenis?.start();
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.__lenis?.start();
+      document.body.style.overflow = "";
+    };
   }, [drawer]);
 
   useEffect(() => {
@@ -47,8 +51,8 @@ export const Nav = () => {
 
   return (
     <>
-      <div data-testid="announcement-bar" className="fixed top-0 inset-x-0 z-50 h-8 bg-[var(--crimson)] text-[var(--ivory)] text-[10px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.22em] uppercase flex items-center justify-center px-4 whitespace-nowrap overflow-hidden">
-        <button type="button" data-testid="announcement-book-btn" onClick={book} className="uppercase tracking-[inherit] hover:text-[var(--gold-light)] transition-colors">
+      <div data-testid="announcement-bar" className="fixed top-0 inset-x-0 z-50 h-8 bg-[var(--ink)] text-[var(--gold-light)] border-b border-[rgba(232,203,138,0.18)] text-[10px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.22em] uppercase flex items-center justify-center px-4 whitespace-nowrap overflow-hidden">
+        <button type="button" data-testid="announcement-book-btn" onClick={book} className="uppercase tracking-[inherit] hover:text-[var(--ivory)] transition-colors">
           <span className="sm:hidden">Wedding season 2026 · Free stylist consultation</span>
           <span className="hidden sm:inline">Wedding season 2026 · Book a free stylist consultation · Hyderabad & California</span>
         </button>
@@ -61,7 +65,7 @@ export const Nav = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
         className={`fixed top-8 inset-x-0 z-50 transition-[background-color,border-color] duration-500 border-b ${
-          mega ? "bg-[var(--ivory)] border-transparent" : scrolled ? "bg-[rgba(247,242,232,0.88)] backdrop-blur-xl border-[rgba(31,7,13,0.08)]" : "bg-transparent border-transparent"
+          mega ? "bg-[var(--ivory)] border-transparent" : scrolled ? "bg-[rgba(247,242,232,0.88)] backdrop-blur-xl border-[rgba(20,17,15,0.08)]" : "bg-transparent border-transparent"
         }`}
       >
         <div className={`mx-auto max-w-[1440px] px-6 lg:px-12 h-16 lg:h-[76px] flex items-center justify-between transition-colors duration-300 ${solid ? "text-[var(--ink)]" : "text-[var(--ivory)]"}`}>
@@ -94,7 +98,7 @@ export const Nav = () => {
               rel="noreferrer"
               data-testid="nav-whatsapp-btn"
               aria-label="Chat on WhatsApp"
-              className={`hidden sm:inline-flex h-10 w-10 items-center justify-center border transition-colors duration-300 ${solid ? "border-[rgba(31,7,13,0.2)] hover:bg-[var(--ink)] hover:text-[var(--ivory)]" : "border-white/30 hover:bg-white hover:text-[var(--ink)]"}`}
+              className={`hidden sm:inline-flex h-10 w-10 items-center justify-center border transition-colors duration-300 ${solid ? "border-[rgba(20,17,15,0.2)] hover:bg-[var(--ink)] hover:text-[var(--ivory)]" : "border-white/30 hover:bg-white hover:text-[var(--ink)]"}`}
             >
               <MessageCircle size={16} />
             </a>
@@ -118,7 +122,7 @@ export const Nav = () => {
       </motion.header>
 
       <AnimatePresence>
-        {mega && <motion.div data-testid="mega-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-40 bg-[rgba(15,3,6,0.5)] hidden lg:block" onMouseEnter={() => setMega(null)} />}
+        {mega && <motion.div data-testid="mega-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-40 bg-[rgba(8,6,5,0.5)] hidden lg:block" onMouseEnter={() => setMega(null)} />}
       </AnimatePresence>
 
       <AnimatePresence>{drawer && <MobileMenu onClose={() => setDrawer(false)} onBook={book} />}</AnimatePresence>

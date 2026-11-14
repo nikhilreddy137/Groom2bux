@@ -7,7 +7,7 @@ const Card = ({ c, i }) => (
   <Reveal delay={(i % 3) * 0.08} className={`${c.span} group relative overflow-hidden bg-[var(--bone)] img-zoom`}>
     <Link to={collectionUrl(c.id)} data-testid={`collection-card-${c.id}`} className="block h-full min-h-[320px] lg:min-h-0">
       <img src={c.img} alt={c.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(31,7,13,0.85)] via-[rgba(31,7,13,0.15)] to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(20,17,15,0.85)] via-[rgba(20,17,15,0.15)] to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8 text-[var(--ivory)] flex items-end justify-between gap-4">
         <div>
           <p className="eyebrow text-[var(--gold-light)] mb-2">{String(i + 1).padStart(2, "0")}</p>

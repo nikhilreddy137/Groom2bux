@@ -19,7 +19,7 @@ export const CollectionHero = ({ active }) => {
       <AnimatePresence mode="wait">
         <motion.div key={c.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6 }} className="absolute inset-y-0 right-0 w-full lg:w-[58%]">
           <img src={c.img} alt="" className="h-full w-full object-cover object-[center_18%]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[rgba(31,7,13,0.78)] to-[rgba(31,7,13,0.55)] lg:bg-gradient-to-r lg:from-[var(--ink)] lg:via-[rgba(31,7,13,0.55)] lg:to-[rgba(31,7,13,0.1)]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)] via-[rgba(20,17,15,0.78)] to-[rgba(20,17,15,0.55)] lg:bg-gradient-to-r lg:from-[var(--ink)] lg:via-[rgba(20,17,15,0.55)] lg:to-[rgba(20,17,15,0.1)]" />
         </motion.div>
       </AnimatePresence>
 
@@ -59,12 +59,12 @@ export const CollectionHero = ({ active }) => {
 };
 
 export const CollectionRail = ({ active }) => (
-  <div data-testid="collection-rail" className="bg-[var(--bone)] border-b border-[rgba(31,7,13,0.1)]">
+  <div data-testid="collection-rail" className="bg-[var(--bone)] border-b border-[rgba(20,17,15,0.1)]">
     <div className="mx-auto max-w-[1440px] flex gap-3 lg:gap-4 overflow-x-auto no-scrollbar px-6 lg:px-12 py-5">
       {[ALL, ...COLLECTIONS].map((c) => {
         const on = c.id === active;
         return (
-          <Link key={c.id || "all"} to={c.id ? `/collections?c=${c.id}` : "/collections"} data-testid={`collection-rail-${c.id || "all"}`} aria-current={on ? "page" : undefined} className={`group shrink-0 flex items-center gap-3 pr-5 border transition-colors duration-300 ${on ? "bg-[var(--ink)] text-[var(--ivory)] border-[var(--ink)]" : "bg-[var(--ivory)] border-[rgba(31,7,13,0.12)] hover:border-[var(--ink)]"}`}>
+          <Link key={c.id || "all"} to={c.id ? `/collections?c=${c.id}` : "/collections"} data-testid={`collection-rail-${c.id || "all"}`} aria-current={on ? "page" : undefined} className={`group shrink-0 flex items-center gap-3 pr-5 border transition-colors duration-300 ${on ? "bg-[var(--ink)] text-[var(--ivory)] border-[var(--ink)]" : "bg-[var(--ivory)] border-[rgba(20,17,15,0.12)] hover:border-[var(--ink)]"}`}>
             <span className="h-14 w-12 overflow-hidden shrink-0">
               <img src={c.img} alt="" loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
             </span>

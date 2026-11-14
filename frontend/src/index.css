@@ -5,22 +5,22 @@
 :root {
     --ivory: #f7f2e8;
     --bone: #ece4d2;
-    --ink: #1f070d;
-    --ink-2: #2e0b14;
-    --wine: #6a1022;
-    --crimson: #9b1c31;
-    --maroon-deep: #4b0c1a;
+    --ink: #14110f;
+    --ink-2: #1f1b18;
+    --wine: #14110f;
+    --crimson: #8c1c2e;
+    --maroon-deep: #1a1613;
     --gold: #b8893a;
     --gold-light: #e8cb8a;
     --stone: #6b5f5a;
 
     --background: 40 33% 92%;
-    --foreground: 345 63% 7%;
+    --foreground: 24 14% 7%;
     --card: 40 33% 95%;
     --card-foreground: 12 9% 7%;
     --popover: 40 33% 95%;
     --popover-foreground: 12 9% 7%;
-    --primary: 345 63% 7%;
+    --primary: 24 14% 7%;
     --primary-foreground: 40 33% 92%;
     --secondary: 38 26% 87%;
     --secondary-foreground: 12 9% 7%;
@@ -186,14 +186,14 @@ body {
 
 .field {
     @apply w-full bg-transparent border-0 border-b py-4 text-base outline-none;
-    border-color: rgba(31, 7, 13, 0.25);
+    border-color: rgba(20, 17, 15, 0.25);
     transition: border-color 0.3s ease;
 }
 .field:focus {
     border-color: var(--ink);
 }
 .field::placeholder {
-    color: rgba(31, 7, 13, 0.4);
+    color: rgba(20, 17, 15, 0.4);
 }
 
 .btn-gold {
@@ -225,7 +225,7 @@ body {
 }
 
 .pick {
-    border: 1px solid rgba(31, 7, 13, 0.18);
+    border: 1px solid rgba(20, 17, 15, 0.18);
     transition:
         border-color 0.3s ease,
         background-color 0.3s ease,

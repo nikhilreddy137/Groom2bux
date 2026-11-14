@@ -30,7 +30,7 @@ export const Occasions = () => {
           </Reveal>
         </div>
 
-        <ul data-testid="occasions-list" className="lg:col-span-6 lg:pt-24 divide-y divide-[rgba(31,7,13,0.15)] border-y border-[rgba(31,7,13,0.15)]">
+        <ul data-testid="occasions-list" className="lg:col-span-6 lg:pt-24 divide-y divide-[rgba(20,17,15,0.15)] border-y border-[rgba(20,17,15,0.15)]">
           {OCCASIONS.map((o, i) => (
             <Reveal key={o.name} delay={i * 0.05}>
               <li>

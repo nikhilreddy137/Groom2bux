@@ -147,7 +147,7 @@ export const OCCASIONS = [
 ];
 
 export const TRYON_IMG = cdn("Frame_364.png", 1600);
-export const EDITORIAL_IMG = cdn("ChatGPT_Image_Sep_10_2026_08_05_02_PM_e0493bf7-4d89-43e9-96cf-77fee8eac296.png", 1400);
+export const EDITORIAL_IMG = cdn("ChatGPT_Image_Sep_10_2026_08_05_02_PM_e0493bf7-4d89-43e9-96cf-77fee8eac296.png", 2400);
 export const SADRI_IMG = cdn("Frame_361_009ca57f-b2b7-4dbe-a9d4-3cc71f959d0d.png", 1400);
 
 export const TESTIMONIALS = [
